@@ -225,11 +225,11 @@
           "name": "scan-display",
           "parameters": {
             "mode": "ghost",
-            "opacity": 0.45
+            "opacity": 0.01
           }
         }
       },
-      "order": 1.0
+      "order": 1
     }
   },
   "spaces": {
