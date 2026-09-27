@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 471,
+    "left": 0,
+    "width": 553,
+    "height": 737,
+    "isRotated": true,
+    "originalWidth": 553,
+    "originalHeight": 1681
+  },
+  "imagePath": "image-targets/20260927_132559_luminance.jpg",
+  "metadata": null,
+  "name": "20260927_132559",
+  "resources": {
+    "originalImage": "20260927_132559_original.jpg",
+    "croppedImage": "20260927_132559_cropped.jpg",
+    "thumbnailImage": "20260927_132559_thumbnail.jpg",
+    "luminanceImage": "20260927_132559_luminance.jpg"
+  },
+  "created": 1790503033044,
+  "updated": 1790503033044
+}
