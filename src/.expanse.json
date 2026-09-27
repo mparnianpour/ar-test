@@ -94,20 +94,20 @@
     "13f0fda4-90b4-4304-a273-df109a944369": {
       "id": "13f0fda4-90b4-4304-a273-df109a944369",
       "position": [
-        1.2467772514040885,
-        -0.20530835893028065,
-        -0.6614729694123371
+        0.24988,
+        -0.12987,
+        -5.02721
       ],
       "rotation": [
-        0,
-        0,
-        0,
-        1
+        0.01547,
+        -0.02276,
+        -0.00212,
+        0.99962
       ],
       "scale": [
-        0.7,
-        1,
-        1
+        1.02949,
+        1.4707,
+        1.4707
       ],
       "geometry": {
         "type": "plane",
@@ -122,7 +122,7 @@
           "asset": "assets/20260926_220048.jpg"
         }
       },
-      "parentId": "2956fc76-bbeb-4a84-8c70-2895711c5110",
+      "parentId": "d269d1d2-ab01-4b47-ba72-38f26ed54fad",
       "components": {},
       "name": "Plane",
       "order": 2.996741243840436
@@ -155,6 +155,81 @@
       },
       "order": 4.787956654275391,
       "persistent": true
+    },
+    "d269d1d2-ab01-4b47-ba72-38f26ed54fad": {
+      "id": "d269d1d2-ab01-4b47-ba72-38f26ed54fad",
+      "name": "Venue",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "1db3bd5f-f5d8-498b-b8f9-0d2fdd6ba689": {
+          "id": "1db3bd5f-f5d8-498b-b8f9-0d2fdd6ba689",
+          "name": "scene-anchor",
+          "parameters": {
+            "debug": true
+          }
+        }
+      },
+      "order": 5.5
+    },
+    "686c87b4-2abf-4645-a4f8-ae94ee64c36a": {
+      "id": "686c87b4-2abf-4645-a4f8-ae94ee64c36a",
+      "name": "museum2 scan",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "d269d1d2-ab01-4b47-ba72-38f26ed54fad",
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/museum2.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "components": {
+        "724fe475-28f4-4c05-8dbb-a5f88b542642": {
+          "id": "724fe475-28f4-4c05-8dbb-a5f88b542642",
+          "name": "scan-display",
+          "parameters": {
+            "mode": "ghost",
+            "opacity": 0.45
+          }
+        }
+      },
+      "order": 1.0
     }
   },
   "spaces": {
