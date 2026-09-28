@@ -94,20 +94,20 @@
     "13f0fda4-90b4-4304-a273-df109a944369": {
       "id": "13f0fda4-90b4-4304-a273-df109a944369",
       "position": [
-        0.24988,
+        0.5,
         -0.12987,
-        -5.02721
+        -3.975
       ],
       "rotation": [
-        0.01547,
-        -0.02276,
-        -0.00212,
-        0.99962
+        0.0043600931610774,
+        -0.03838744366324465,
+        0.0001674978838126537,
+        0.9992534041478601
       ],
       "scale": [
-        1.02949,
-        1.4707,
-        1.4707
+        1.03,
+        1.471428569806859,
+        1.4714285727950063
       ],
       "geometry": {
         "type": "plane",
@@ -120,10 +120,18 @@
         "textureSrc": {
           "type": "asset",
           "asset": "assets/20260926_220048.jpg"
-        }
+        },
+        "opacity": 0.85,
+        "depthWrite": false
       },
       "parentId": "d269d1d2-ab01-4b47-ba72-38f26ed54fad",
-      "components": {},
+      "components": {
+        "a94a87de-3c1c-495b-93e8-5ba67aa80cbd": {
+          "id": "a94a87de-3c1c-495b-93e8-5ba67aa80cbd",
+          "name": "people-occlusion",
+          "parameters": {}
+        }
+      },
       "name": "Plane",
       "order": 2.996741243840436
     },
@@ -225,11 +233,39 @@
           "name": "scan-display",
           "parameters": {
             "mode": "ghost",
-            "opacity": 0.01
+            "opacity": 0.3
           }
         }
       },
       "order": 1
+    },
+    "2f433280-5e4e-42e3-9829-b84ea1e8a9b7": {
+      "id": "2f433280-5e4e-42e3-9829-b84ea1e8a9b7",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Image Target (1)",
+      "imageTarget": {
+        "name": "tmoca_poster"
+      },
+      "order": 7.161180719406597
     }
   },
   "spaces": {

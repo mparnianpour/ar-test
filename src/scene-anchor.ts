@@ -48,6 +48,16 @@ const ANCHOR_TARGETS: AnchorTarget[] = [
     position: [-1.6251, 0.151, -4.1298],
     rotation: [0.01547, -0.02276, -0.00212, 0.99962],
   },
+  {
+    // Target tmoca_poster: the WHOLE print on the back wall, cropped and straightened from the
+    // room photos (2.21 x 1.37 m in the scan). Much larger in view than the close-up above, so it
+    // is the one that locks from across the room. Found the same way (430 matched features, 6 mm
+    // median residual).
+    name: 'tmoca_poster',
+    longestSide: 2.2058,
+    position: [-1.867, 0.2467, -4.1469],
+    rotation: [0.01429, -0.01351, -0.00422, 0.9998],
+  },
 ]
 
 // -------------------------------------------------------------------------------------------------
@@ -276,6 +286,14 @@ const SceneAnchor = ecs.registerComponent({
       state.lastTarget = target.name
 
       const kSample = c.scaleMode === 'fixed' ? c.fixedScale : data.scale / target.longestSide
+      if (state.anchored && c.mode !== 'once' && c.scaleMode !== 'fixed' &&
+        Number.isFinite(kSample) && kSample > 0) {
+        // 8th Wall's size estimate for an image keeps improving for a few seconds after it is first
+        // seen, so keep refining the scale as well instead of freezing the first guess (in the
+        // simulator the first guess was about half the true size).
+        state.k += (kSample - state.k) * Math.min(1, Math.max(0, c.refineRate))
+        state.settled = false
+      }
       const k = state.anchored ? state.k : kSample
       const estimate = scanPoseFromImage(target, data.position, data.rotation, k, c.keepUpright)
 
@@ -284,7 +302,7 @@ const SceneAnchor = ecs.registerComponent({
         setStatus(`Locking on "${target.name}" ${state.lockBuffer.n}/${c.samplesToLock}`)
         if (state.lockBuffer.n >= Math.max(1, c.samplesToLock)) {
           const mean = bufferMean(state.lockBuffer)
-          // Scale is locked from here on; later estimates reuse it.
+          // Starting scale. In 'refine' mode it keeps being refined while a target is tracked.
           state.k = mean.k
           const first = state.current === null
           state.goal = mean.pose
